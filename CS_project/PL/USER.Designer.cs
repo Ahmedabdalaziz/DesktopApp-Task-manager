@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USER));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bot_update = new DevExpress.XtraEditors.SimpleButton();
@@ -41,9 +42,11 @@
             this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRole = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 636);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 84);
+            this.panel1.Size = new System.Drawing.Size(1129, 84);
             this.panel1.TabIndex = 0;
             // 
             // bot_update
@@ -66,7 +69,7 @@
             this.bot_update.Appearance.Options.UseFont = true;
             this.bot_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_update.ImageOptions.Image")));
             this.bot_update.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_update.Location = new System.Drawing.Point(647, 9);
+            this.bot_update.Location = new System.Drawing.Point(671, 9);
             this.bot_update.Name = "bot_update";
             this.bot_update.Size = new System.Drawing.Size(98, 66);
             this.bot_update.TabIndex = 2;
@@ -80,7 +83,7 @@
             this.bot_edit.Appearance.Options.UseFont = true;
             this.bot_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_edit.ImageOptions.Image")));
             this.bot_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_edit.Location = new System.Drawing.Point(543, 9);
+            this.bot_edit.Location = new System.Drawing.Point(567, 9);
             this.bot_edit.Name = "bot_edit";
             this.bot_edit.Size = new System.Drawing.Size(98, 66);
             this.bot_edit.TabIndex = 2;
@@ -94,11 +97,12 @@
             this.bot_delete.Appearance.Options.UseFont = true;
             this.bot_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_delete.ImageOptions.Image")));
             this.bot_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_delete.Location = new System.Drawing.Point(439, 9);
+            this.bot_delete.Location = new System.Drawing.Point(463, 9);
             this.bot_delete.Name = "bot_delete";
             this.bot_delete.Size = new System.Drawing.Size(98, 66);
             this.bot_delete.TabIndex = 2;
             this.bot_delete.Text = "Delete";
+            this.bot_delete.Click += new System.EventHandler(this.bot_delete_Click);
             // 
             // bot_add
             // 
@@ -108,7 +112,7 @@
             this.bot_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bot_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_add.ImageOptions.Image")));
             this.bot_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_add.Location = new System.Drawing.Point(335, 9);
+            this.bot_add.Location = new System.Drawing.Point(359, 9);
             this.bot_add.Name = "bot_add";
             this.bot_add.Size = new System.Drawing.Size(98, 66);
             this.bot_add.TabIndex = 2;
@@ -123,7 +127,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(1080, 636);
+            this.gridControl1.Size = new System.Drawing.Size(1129, 636);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -209,6 +213,12 @@
             this.colRole.VisibleIndex = 4;
             this.colRole.Width = 94;
             // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "dbdaf4af-9bcc-471e-bdf3-e8a9a7e615c8";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("0efb0bb3-c5d1-4244-8498-37a61bd42ffe", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "تم الحذف", "تسلم ايدك يسطا عبدو تم الحذف", "تسلم ايدك يسطا عبدو تم الحذف", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            // 
             // USER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -216,10 +226,11 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Name = "USER";
-            this.Size = new System.Drawing.Size(1080, 720);
+            this.Size = new System.Drawing.Size(1129, 720);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +249,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUserName;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
         private DevExpress.XtraEditors.SimpleButton bot_update;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }

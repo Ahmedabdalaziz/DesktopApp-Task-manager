@@ -59,6 +59,7 @@
             // 
             // pl_cont
             // 
+            this.pl_cont.BackColor = System.Drawing.Color.White;
             this.pl_cont.Controls.Add(this.bo_main);
             this.pl_cont.Controls.Add(this.bo_users);
             this.pl_cont.Controls.Add(this.bo_tasks);
@@ -106,7 +107,7 @@
             this.bo_tasks.Size = new System.Drawing.Size(194, 66);
             this.bo_tasks.TabIndex = 1;
             this.bo_tasks.Text = "المهام";
-            this.bo_tasks.Click += new System.EventHandler(this.المهام_Click);
+            this.bo_tasks.Click += new System.EventHandler(this.Tasks_Click);
             // 
             // bo_project
             // 
@@ -192,7 +193,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1062, 539);
@@ -210,7 +210,7 @@
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TaskTracker";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);

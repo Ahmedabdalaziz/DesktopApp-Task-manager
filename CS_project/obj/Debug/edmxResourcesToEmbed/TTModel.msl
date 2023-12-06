@@ -4,12 +4,22 @@
     <EntitySetMapping Name="TB_Users">
       <EntityTypeMapping TypeName="DBTaskTrackerModel.TB_Users">
         <MappingFragment StoreEntitySet="TB_Users">
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Projects">
+      <EntityTypeMapping TypeName="DBTaskTrackerModel.TB_Projects">
+        <MappingFragment StoreEntitySet="TB_Projects">
+          <ScalarProperty Name="ProjectDes" ColumnName="ProjectDes" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -20,5 +20,6 @@ namespace CS_project
         public string Password { get; set; }
         public string State { get; set; }
         public string Role { get; set; }
+        public byte[] image { get; set; }
     }
 }

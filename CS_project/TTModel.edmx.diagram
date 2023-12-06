@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2a73df8a51f44a61ba539dc69bf19986" Name="Diagram1">
         <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Projects" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

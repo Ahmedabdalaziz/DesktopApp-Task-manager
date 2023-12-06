@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CS_project.PL;
+using System;
 using System.Windows.Forms;
-using CS_project.PL;
 namespace CS_project
 {
     public partial class Main : Form
     {
         Home HOME;
         USER USER;
+        Project Project;
+
         public Main()
         {
             InitializeComponent();
@@ -44,16 +39,22 @@ namespace CS_project
 
         }
 
-        private void المهام_Click(object sender, EventArgs e)
+        private void Tasks_Click(object sender, EventArgs e)
         {
+            Project = new Project();
+            Project.Dock = DockStyle.Fill;
+            //
+            panel1.Controls.Clear();
+            panel1.Controls.Add(Project);
+            pn_status.Text = "المهام";
 
         }
 
-      //home event
+        //home event
         private void bo_main_Click(object sender, EventArgs e)
         {
             loadHomePage();
-           
+
         }
 
         private void bo_users_Click(object sender, EventArgs e)

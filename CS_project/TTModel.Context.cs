@@ -26,5 +26,6 @@ namespace CS_project
         }
     
         public virtual DbSet<TB_Users> TB_Users { get; set; }
+        public virtual DbSet<TB_Projects> TB_Projects { get; set; }
     }
 }

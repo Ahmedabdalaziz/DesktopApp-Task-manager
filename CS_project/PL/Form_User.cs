@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Data;
-using System.Drawing;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CS_project.PL
@@ -14,8 +11,8 @@ namespace CS_project.PL
     {
         DBTaskTrackerEntities db;
         TB_Users Users;
-        public int id ;
-
+        public int id;
+        public byte[] SelectedImageBytes { get; set; }
 
         public Form_User_add()
         {
@@ -54,38 +51,65 @@ namespace CS_project.PL
 
         private void bo_save_User_Click(object sender, EventArgs e)
         {
-            //check faild
-            if(txt_fullName.Text==""|| txt_username.Text ==""|| txt_pass.Text ==""||combo_role.Items==null)
+            if (txt_fullName.Text == "" || txt_username.Text == "" || txt_pass.Text == "" || combo_role.Items == null)
             {
                 MessageBox.Show(
                     "كمل باقي المتطلبات يحبيب اخوك",
                     "خطأ في الاضافة يامعلم",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-               
+
             }
             else
             {
-                if (id== 0)
+                //duplicated 
+                try
                 {
-                    //add items
-                    AddData();
-                    Close();
-                }
-                else
-                {
-                    // edit item
-                    editData();
-                    Close();
 
+                    db = new DBTaskTrackerEntities();
+                    Users = new TB_Users();
+                    //بحدد اللي انا عايزه
+                    var data = db.TB_Users.Where(x => x.UserName == txt_username.Text).FirstOrDefault();
+
+                    if (data != null)
+                    {
+                        MessageBox.Show(
+                        "البيانات متكررة ياكبير",
+                        "فيه حوار",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (id == 0)
+                        {
+                            // add 
+                            AddData();
+                            Close();
+                        }
+                        else
+                        {
+                            // edit 
+                            editData();
+                            Close();
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show(
+                        "مش عارف اوصل للداتا بيز ياعمدة",
+                        "فيه حوار مع الاتصال",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
             }
         }
 
         private void AddData()
         {
-            try {
-
+            try
+            {
                 db = new DBTaskTrackerEntities();
                 Users = new TB_Users();
                 Users.FullName = txt_fullName.Text;
@@ -94,21 +118,24 @@ namespace CS_project.PL
                 Users.Role = combo_role.SelectedItem.ToString();
                 Users.State = "OFF";
 
-                //save database changes 
-                db.Entry(Users).State = System.Data.Entity.EntityState.Added;
+   
+                Users.image = SelectedImageBytes;
+
+                // Save
+                db.Entry(Users).State = EntityState.Added;
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("f66e5a5d-e43d-4a68-9d46-20d520eba532");
-                //notfication 
-
             }
-            catch {
+            catch
+            {
                 MessageBox.Show(
                     "مش عارف اوصل للداتا بيز ياعمدة",
                     "فيه حوار مع الاتصال",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
-            
+        }
+
         private void editData()
         {
             try
@@ -116,18 +143,18 @@ namespace CS_project.PL
                 db = new DBTaskTrackerEntities();
                 Users = new TB_Users();
                 Users.ID = id;
-                // 
+
                 Users.FullName = txt_fullName.Text;
                 Users.UserName = txt_username.Text;
                 Users.Password = txt_pass.Text;
                 Users.Role = combo_role.SelectedItem.ToString();
                 Users.State = Users.State;
+                Users.image = SelectedImageBytes;
 
-                //save database changes 
-                db.Entry(Users).State = System.Data.Entity.EntityState.Modified;
+                // احفظ في الداتا بيز يامعلم
+                db.Entry(Users).State = EntityState.Modified;
                 db.SaveChanges();
-
-                //notfication 
+                // تسلم ايدك
                 toastNotificationsManager1.ShowNotification("b01df8e2-9ed5-481b-beb4-249210feb074");
             }
             catch
@@ -138,7 +165,17 @@ namespace CS_project.PL
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox2.ImageLocation = dialog.FileName;
+
+                SelectedImageBytes = System.IO.File.ReadAllBytes(dialog.FileName);
+            }
         }
     }
 }
