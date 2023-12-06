@@ -88,8 +88,6 @@ namespace CS_project.PL
 
                 db = new DBTaskTrackerEntities();
                 Users = new TB_Users();
-
-                // 
                 Users.FullName = txt_fullName.Text;
                 Users.UserName = txt_username.Text;
                 Users.Password = txt_pass.Text;
@@ -111,13 +109,10 @@ namespace CS_project.PL
                     MessageBoxIcon.Warning);
             }
             
-        }
         private void editData()
         {
             try
             {
-
-
                 db = new DBTaskTrackerEntities();
                 Users = new TB_Users();
                 Users.ID = id;
