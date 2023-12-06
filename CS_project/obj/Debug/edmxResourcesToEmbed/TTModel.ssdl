@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBTaskTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'DBTaskTracker.dbo.TB_Projects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TB_Projects">
     <Key>
       <PropertyRef Name="ID" />
@@ -23,13 +21,7 @@ warning 6002: The table/view 'DBTaskTracker.dbo.TB_Projects' does not have a pri
     <Property Name="image" Type="image" />
   </EntityType>
   <EntityContainer Name="DBTaskTrackerModelStoreContainer">
+    <EntitySet Name="TB_Projects" EntityType="Self.TB_Projects" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Users" EntityType="Self.TB_Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TB_Projects" EntityType="Self.TB_Projects" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TB_Projects].[ID] AS [ID], 
-    [TB_Projects].[ProjectName] AS [ProjectName], 
-    [TB_Projects].[ProjectDes] AS [ProjectDes]
-    FROM [dbo].[TB_Projects] AS [TB_Projects]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

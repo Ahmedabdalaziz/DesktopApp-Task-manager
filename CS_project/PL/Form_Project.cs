@@ -1,4 +1,5 @@
 ﻿
+using DevExpress.XtraGrid;
 using System;
 using System.Data;
 using System.Data.Entity;
@@ -7,14 +8,15 @@ using System.Windows.Forms;
 
 namespace CS_project.PL
 {
-    public partial class Form_User_add : Form
+    public partial class Form_Project : Form
     {
         DBTaskTrackerEntities db;
-        TB_Users Users;
+        TB_Projects project;
+
         public int id;
         public byte[] SelectedImageBytes { get; set; }
 
-        public Form_User_add()
+        public Form_Project()
         {
             InitializeComponent();
         }
@@ -51,33 +53,32 @@ namespace CS_project.PL
 
         private void bo_save_User_Click(object sender, EventArgs e)
         {
-            if (txt_fullName.Text == "" || txt_username.Text == "" || txt_pass.Text == "" || combo_role.Items == null)
+            if (txt_projName.Text == "" || txt_projDesc.Text == "")
             {
                 MessageBox.Show(
                     "Complete the rest of the requirements",
                     "There is a problem",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-
             }
             else
             {
                 //duplicated 
                 try
                 {
-
                     db = new DBTaskTrackerEntities();
-                    Users = new TB_Users();
+                    project = new TB_Projects();
+
                     //بحدد اللي انا عايزه
-                    var data = db.TB_Users.Where(x => x.UserName == txt_username.Text && x.ID != id).FirstOrDefault();
+                    var data = db.TB_Projects.Where(x => x.ProjectName == txt_projName.Text&& x.ID== id).FirstOrDefault();
 
                     if (data != null)
                     {
                         MessageBox.Show(
-                        "Duplecated Username",
-                        "There is a problem",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                            "Duplicated Project Name",
+                            "There is a problem",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -98,7 +99,7 @@ namespace CS_project.PL
                 catch
                 {
                     MessageBox.Show(
-                         "Unable to connect to the database",
+                        "Unable to connect to the database",
                         "Unable to connect to the database",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -111,18 +112,13 @@ namespace CS_project.PL
             try
             {
                 db = new DBTaskTrackerEntities();
-                Users = new TB_Users();
-                Users.FullName = txt_fullName.Text;
-                Users.UserName = txt_username.Text;
-                Users.Password = txt_pass.Text;
-                Users.Role = combo_role.SelectedItem.ToString();
-                Users.State = "OFF";
+                project = new TB_Projects();
 
-   
-                Users.image = SelectedImageBytes;
+                project.ProjectName = txt_projName.Text;
+                project.ProjectDes = txt_projDesc.Text;
 
                 // Save
-                db.Entry(Users).State = EntityState.Added;
+                db.Entry(project).State = EntityState.Added;
                 db.SaveChanges();
                 toastNotificationsManager1.ShowNotification("f66e5a5d-e43d-4a68-9d46-20d520eba532");
             }
@@ -141,21 +137,27 @@ namespace CS_project.PL
             try
             {
                 db = new DBTaskTrackerEntities();
-                Users = new TB_Users();
-                Users.ID = id;
+                project = db.TB_Projects.Find(id);
 
-                Users.FullName = txt_fullName.Text;
-                Users.UserName = txt_username.Text;
-                Users.Password = txt_pass.Text;
-                Users.Role = combo_role.SelectedItem.ToString();
-                Users.State = Users.State;
-                Users.image = SelectedImageBytes;
+                if (project != null)
+                {
+                    // Update project properties
+                    project.ProjectName = txt_projName.Text;
+                    project.ProjectDes = txt_projDesc.Text;
 
-                // احفظ في الداتا بيز يامعلم
-                db.Entry(Users).State = EntityState.Modified;
-                db.SaveChanges();
-                // تسلم ايدك
-                toastNotificationsManager1.ShowNotification("b01df8e2-9ed5-481b-beb4-249210feb074");
+                    // Save changes
+                    db.Entry(project).State = EntityState.Modified;
+                    db.SaveChanges();
+                    toastNotificationsManager1.ShowNotification("b01df8e2-9ed5-481b-beb4-249210feb074");
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Project not found",
+                        "Unable to update",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
             catch
             {
@@ -168,15 +170,8 @@ namespace CS_project.PL
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox2.ImageLocation = dialog.FileName;
 
-                SelectedImageBytes = System.IO.File.ReadAllBytes(dialog.FileName);
-            }
-        }
+        
     }
 }
+

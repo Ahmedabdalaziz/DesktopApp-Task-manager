@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USER));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bot_update = new DevExpress.XtraEditors.SimpleButton();
             this.bot_edit = new DevExpress.XtraEditors.SimpleButton();
             this.bot_delete = new DevExpress.XtraEditors.SimpleButton();
             this.bot_add = new DevExpress.XtraEditors.SimpleButton();
@@ -52,7 +51,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.bot_update);
             this.panel1.Controls.Add(this.bot_edit);
             this.panel1.Controls.Add(this.bot_delete);
             this.panel1.Controls.Add(this.bot_add);
@@ -61,20 +59,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 84);
             this.panel1.TabIndex = 0;
-            // 
-            // bot_update
-            // 
-            this.bot_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bot_update.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bot_update.Appearance.Options.UseFont = true;
-            this.bot_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_update.ImageOptions.Image")));
-            this.bot_update.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_update.Location = new System.Drawing.Point(671, 9);
-            this.bot_update.Name = "bot_update";
-            this.bot_update.Size = new System.Drawing.Size(98, 66);
-            this.bot_update.TabIndex = 2;
-            this.bot_update.Text = "Update";
-            this.bot_update.Click += new System.EventHandler(this.bot_update_Click);
             // 
             // bot_edit
             // 
@@ -131,6 +115,7 @@
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -217,7 +202,7 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "dbdaf4af-9bcc-471e-bdf3-e8a9a7e615c8";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("0efb0bb3-c5d1-4244-8498-37a61bd42ffe", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "تم الحذف", "تسلم ايدك يسطا عبدو تم الحذف", "تسلم ايدك يسطا عبدو تم الحذف", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("0efb0bb3-c5d1-4244-8498-37a61bd42ffe", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "تسلم ايدك , تم الحذف", "تسلم ايدك , تم الحذف", "تسلم ايدك , تم الحذف", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // USER
             // 
@@ -248,7 +233,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colState;
         private DevExpress.XtraGrid.Columns.GridColumn colUserName;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
-        private DevExpress.XtraEditors.SimpleButton bot_update;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }

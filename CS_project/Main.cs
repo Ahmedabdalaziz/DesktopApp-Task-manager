@@ -46,7 +46,7 @@ namespace CS_project
             //
             panel1.Controls.Clear();
             panel1.Controls.Add(Project);
-            pn_status.Text = "المهام";
+            pn_status.Text = "المشروع";
 
         }
 

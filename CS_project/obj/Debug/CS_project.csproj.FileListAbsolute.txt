@@ -77,3 +77,4 @@ C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_proj
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.DataAccess.v23.1.xml
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraNavBar.v23.1.xml
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.Xpo.v23.1.xml
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\obj\Debug\CS_project.PL.Form_Project.resources

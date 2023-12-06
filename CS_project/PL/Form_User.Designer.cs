@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_User_add));
-            this.welcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.txt_pass = new DevExpress.XtraEditors.TextEdit();
             this.txt_username = new DevExpress.XtraEditors.TextEdit();
             this.txt_fullName = new DevExpress.XtraEditors.TextEdit();
+            this.welcome = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_pass.Properties)).BeginInit();
@@ -48,17 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // welcome
-            // 
-            this.welcome.AutoSize = true;
-            this.welcome.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.ForeColor = System.Drawing.Color.Gray;
-            this.welcome.Location = new System.Drawing.Point(226, 16);
-            this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(236, 40);
-            this.welcome.TabIndex = 3;
-            this.welcome.Text = "أضافة مستخدم جديد";
             // 
             // label1
             // 
@@ -125,8 +114,8 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "dbdaf4af-9bcc-471e-bdf3-e8a9a7e615c8";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("f66e5a5d-e43d-4a68-9d46-20d520eba532", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "تسلم ايدك يسطا عبدو تم الاضافة", "تسلم ايدك يسطا عبدو تم الاضافة", "تسلم ايدك يسطا عبدو تم الاضافة", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("b01df8e2-9ed5-481b-beb4-249210feb074", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications1"))), "تسلم ايدك يسطا عبدو تم التعديل", "تسلم ايدك يسطا عبدو تم التعديل", "تسلم ايدك يسطا عبدو تم التعديل", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("f66e5a5d-e43d-4a68-9d46-20d520eba532", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "تسلم ايدك,تم الاضافة", "تسلم ايدك,تم الاضافة", "تسلم ايدك,تم الاضافة", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("b01df8e2-9ed5-481b-beb4-249210feb074", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications1"))), "تسلم ايدك,تم التعديل", "تسلم ايدك, تم التعديل", "تسلم ايدك, تم التعديل", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // bo_save_User
             // 
@@ -174,9 +163,21 @@
             this.txt_fullName.TabIndex = 4;
             this.txt_fullName.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
+            // welcome
+            // 
+            this.welcome.AutoSize = true;
+            this.welcome.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome.ForeColor = System.Drawing.Color.Gray;
+            this.welcome.Location = new System.Drawing.Point(226, 16);
+            this.welcome.Name = "welcome";
+            this.welcome.Size = new System.Drawing.Size(236, 40);
+            this.welcome.TabIndex = 3;
+            this.welcome.Text = "أضافة مستخدم جديد";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.Image = global::CS_project.Properties.Resources.tanyastock160801788;
             this.pictureBox2.Location = new System.Drawing.Point(233, 59);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(214, 222);
@@ -224,7 +225,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label welcome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -235,6 +235,7 @@
         public DevExpress.XtraEditors.TextEdit txt_pass;
         public System.Windows.Forms.ComboBox combo_role;
         public DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private System.Windows.Forms.Label welcome;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

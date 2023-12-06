@@ -87,11 +87,11 @@
             this.welcome.AutoSize = true;
             this.welcome.Font = new System.Drawing.Font("Garamond", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome.ForeColor = System.Drawing.Color.Black;
-            this.welcome.Location = new System.Drawing.Point(546, 67);
+            this.welcome.Location = new System.Drawing.Point(534, 61);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(519, 90);
+            this.welcome.Size = new System.Drawing.Size(534, 90);
             this.welcome.TabIndex = 2;
-            this.welcome.Text = "صباح العذاب الوان";
+            this.welcome.Text = "صباح الخير يا أحمد";
             // 
             // panel3
             // 

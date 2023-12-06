@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Project));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bot_update = new DevExpress.XtraEditors.SimpleButton();
             this.bot_edit = new DevExpress.XtraEditors.SimpleButton();
             this.bot_delete = new DevExpress.XtraEditors.SimpleButton();
             this.bot_add = new DevExpress.XtraEditors.SimpleButton();
@@ -49,7 +48,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.bot_update);
             this.panel1.Controls.Add(this.bot_edit);
             this.panel1.Controls.Add(this.bot_delete);
             this.panel1.Controls.Add(this.bot_add);
@@ -58,20 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 84);
             this.panel1.TabIndex = 0;
-            // 
-            // bot_update
-            // 
-            this.bot_update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bot_update.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bot_update.Appearance.Options.UseFont = true;
-            this.bot_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_update.ImageOptions.Image")));
-            this.bot_update.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bot_update.Location = new System.Drawing.Point(647, 9);
-            this.bot_update.Name = "bot_update";
-            this.bot_update.Size = new System.Drawing.Size(98, 66);
-            this.bot_update.TabIndex = 2;
-            this.bot_update.Text = "Update";
-            this.bot_update.Click += new System.EventHandler(this.bot_update_Click);
             // 
             // bot_edit
             // 
@@ -199,7 +183,6 @@
         private DevExpress.XtraEditors.SimpleButton bot_add;
         private DevExpress.XtraEditors.SimpleButton bot_edit;
         private DevExpress.XtraEditors.SimpleButton bot_delete;
-        private DevExpress.XtraEditors.SimpleButton bot_update;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
         private DevExpress.XtraGrid.Columns.GridColumn colProjectName;
         private DevExpress.XtraGrid.Columns.GridColumn colProjectDes;
