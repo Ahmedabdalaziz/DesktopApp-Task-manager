@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBTaskTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Notes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Note_Desc" Type="nvarchar(max)" />
+    <Property Name="Note_Manager" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note_User" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="TB_Projects">
     <Key>
       <PropertyRef Name="ID" />
@@ -7,6 +16,23 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
     <Property Name="ProjectDes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TB_Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Project" Type="int" />
+    <Property Name="ID_User" Type="int" />
+    <Property Name="Task_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Task_Desc" Type="nvarchar(max)" />
+    <Property Name="Task_User" Type="nvarchar" MaxLength="50" />
+    <Property Name="Task_Admin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Task_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="Task_Start" Type="date" />
+    <Property Name="Task_End" Type="date" />
+    <Property Name="Task_Duration" Type="int" />
+    <Property Name="Task_State" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TB_Users">
     <Key>
@@ -20,8 +46,46 @@
     <Property Name="Role" Type="nvarchar" MaxLength="50" />
     <Property Name="image" Type="image" />
   </EntityType>
+  <Association Name="FK_TB_Tasks_TB_Projects1">
+    <End Role="TB_Projects" Type="Self.TB_Projects" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TB_Tasks" Type="Self.TB_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Projects">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Tasks">
+        <PropertyRef Name="ID_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Tasks_TB_Users">
+    <End Role="TB_Users" Type="Self.TB_Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TB_Tasks" Type="Self.TB_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Tasks">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DBTaskTrackerModelStoreContainer">
+    <EntitySet Name="TB_Notes" EntityType="Self.TB_Notes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Projects" EntityType="Self.TB_Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Tasks" EntityType="Self.TB_Tasks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Users" EntityType="Self.TB_Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TB_Tasks_TB_Projects1" Association="Self.FK_TB_Tasks_TB_Projects1">
+      <End Role="TB_Projects" EntitySet="TB_Projects" />
+      <End Role="TB_Tasks" EntitySet="TB_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Tasks_TB_Users" Association="Self.FK_TB_Tasks_TB_Users">
+      <End Role="TB_Users" EntitySet="TB_Users" />
+      <End Role="TB_Tasks" EntitySet="TB_Tasks" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

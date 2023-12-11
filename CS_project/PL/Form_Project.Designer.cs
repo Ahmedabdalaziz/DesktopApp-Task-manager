@@ -33,10 +33,11 @@
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.bo_save_User = new DevExpress.XtraEditors.SimpleButton();
             this.txt_projName = new DevExpress.XtraEditors.TextEdit();
-            this.txt_projDesc = new DevExpress.XtraEditors.TextEdit();
+            this.txt_projDesc = new System.Windows.Forms.RichTextBox();
+            this.pn_status = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_projName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_projDesc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // toastNotificationsManager1
@@ -53,7 +54,7 @@
             this.bo_save_User.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bo_save_User.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bo_save_User.ImageOptions.Image")));
             this.bo_save_User.ImageOptions.ImageUri.Uri = "SaveAll";
-            this.bo_save_User.Location = new System.Drawing.Point(0, 697);
+            this.bo_save_User.Location = new System.Drawing.Point(0, 596);
             this.bo_save_User.Name = "bo_save_User";
             this.bo_save_User.Size = new System.Drawing.Size(642, 83);
             this.bo_save_User.TabIndex = 6;
@@ -63,7 +64,7 @@
             // txt_projName
             // 
             this.txt_projName.EditValue = "";
-            this.txt_projName.Location = new System.Drawing.Point(95, 85);
+            this.txt_projName.Location = new System.Drawing.Point(95, 112);
             this.txt_projName.Name = "txt_projName";
             this.txt_projName.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txt_projName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,13 +76,35 @@
             // 
             // txt_projDesc
             // 
-            this.txt_projDesc.Location = new System.Drawing.Point(95, 304);
+            this.txt_projDesc.Location = new System.Drawing.Point(95, 245);
             this.txt_projDesc.Name = "txt_projDesc";
-            this.txt_projDesc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_projDesc.Properties.Appearance.Options.UseFont = true;
-            this.txt_projDesc.Size = new System.Drawing.Size(452, 40);
-            this.txt_projDesc.TabIndex = 4;
-            this.txt_projDesc.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.txt_projDesc.Size = new System.Drawing.Size(452, 280);
+            this.txt_projDesc.TabIndex = 7;
+            this.txt_projDesc.Text = "";
+            this.txt_projDesc.TextChanged += new System.EventHandler(this.txt_projDesc_TextChanged);
+            // 
+            // pn_status
+            // 
+            this.pn_status.AutoSize = true;
+            this.pn_status.Font = new System.Drawing.Font("Franklin Gothic Medium", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pn_status.ForeColor = System.Drawing.Color.DarkBlue;
+            this.pn_status.Location = new System.Drawing.Point(323, 189);
+            this.pn_status.Name = "pn_status";
+            this.pn_status.Size = new System.Drawing.Size(224, 43);
+            this.pn_status.TabIndex = 8;
+            this.pn_status.Text = "وصف المشروع";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label1.Location = new System.Drawing.Point(355, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 43);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "أسم المشروع";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Form_Project
             // 
@@ -89,9 +112,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(642, 780);
-            this.Controls.Add(this.bo_save_User);
+            this.ClientSize = new System.Drawing.Size(642, 679);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pn_status);
             this.Controls.Add(this.txt_projDesc);
+            this.Controls.Add(this.bo_save_User);
             this.Controls.Add(this.txt_projName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -105,8 +130,8 @@
             this.Load += new System.EventHandler(this.Form_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_projName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_projDesc.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,6 +139,8 @@
         public DevExpress.XtraEditors.SimpleButton bo_save_User;
         public DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
         public DevExpress.XtraEditors.TextEdit txt_projName;
-        public DevExpress.XtraEditors.TextEdit txt_projDesc;
+        private System.Windows.Forms.Label pn_status;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.RichTextBox txt_projDesc;
     }
 }

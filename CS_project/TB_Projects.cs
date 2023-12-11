@@ -14,8 +14,17 @@ namespace CS_project
     
     public partial class TB_Projects
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_Projects()
+        {
+            this.TB_Tasks = new HashSet<TB_Tasks>();
+        }
+    
         public int ID { get; set; }
         public string ProjectName { get; set; }
         public string ProjectDes { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_Tasks> TB_Tasks { get; set; }
     }
 }

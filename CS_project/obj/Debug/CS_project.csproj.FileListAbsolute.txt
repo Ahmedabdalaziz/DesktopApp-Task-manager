@@ -78,3 +78,11 @@ C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_proj
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraNavBar.v23.1.xml
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.Xpo.v23.1.xml
 C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\obj\Debug\CS_project.PL.Form_Project.resources
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\obj\Debug\CS_project.PL.Form_Task.resources
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\obj\Debug\CS_project.PL.Task.resources
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.Core.Desktop.dll
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.Core.dll
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.dll
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.xml
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.Core.xml
+C:\Users\Lap Store\Desktop\عشوائيات برمجية\.net\CS_project\CS_project\bin\Debug\DevExpress.XtraScheduler.v23.1.Core.Desktop.xml

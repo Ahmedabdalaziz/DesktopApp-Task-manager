@@ -54,6 +54,9 @@
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core.Desktop, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -92,6 +95,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Form_Task.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Form_Task.Designer.cs">
+      <DependentUpon>Form_Task.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Form_Project.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +119,12 @@
     <Compile Include="PL\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Task.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Task.Designer.cs">
+      <DependentUpon>Task.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Project.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,7 +139,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TB_Notes.cs">
+      <DependentUpon>TTModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Projects.cs">
+      <DependentUpon>TTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Tasks.cs">
       <DependentUpon>TTModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_Users.cs">
@@ -148,6 +169,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Form_Task.resx">
+      <DependentUpon>Form_Task.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Form_Project.resx">
       <DependentUpon>Form_Project.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Task.resx">
+      <DependentUpon>Task.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Project.resx">
       <DependentUpon>Project.cs</DependentUpon>

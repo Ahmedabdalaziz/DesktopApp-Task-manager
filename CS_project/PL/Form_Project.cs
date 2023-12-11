@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace CS_project.PL
 {
@@ -137,27 +138,20 @@ namespace CS_project.PL
             try
             {
                 db = new DBTaskTrackerEntities();
-                project = db.TB_Projects.Find(id);
+                project = new TB_Projects();
+                
+                //check 
+                project.ID = id;
+                
+                //
+                project.ProjectName = txt_projName.Text;
+                project.ProjectDes = txt_projDesc.Text;
 
-                if (project != null)
-                {
-                    // Update project properties
-                    project.ProjectName = txt_projName.Text;
-                    project.ProjectDes = txt_projDesc.Text;
+                // Save
+                db.Entry(project).State = EntityState.Modified;
+                db.SaveChanges();
+                toastNotificationsManager1.ShowNotification("b01df8e2-9ed5-481b-beb4-249210feb074");
 
-                    // Save changes
-                    db.Entry(project).State = EntityState.Modified;
-                    db.SaveChanges();
-                    toastNotificationsManager1.ShowNotification("b01df8e2-9ed5-481b-beb4-249210feb074");
-                }
-                else
-                {
-                    MessageBox.Show(
-                        "Project not found",
-                        "Unable to update",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
             }
             catch
             {
@@ -170,8 +164,15 @@ namespace CS_project.PL
 
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void txt_projDesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

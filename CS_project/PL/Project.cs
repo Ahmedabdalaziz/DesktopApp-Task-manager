@@ -39,6 +39,8 @@ namespace CS_project.PL
             Form_Project.ShowDialog();
 
             UserUpdate();
+            toastNotificationsManager1.ShowNotification("a69946f8-3fc3-4214-87f8-7661157b2eae");
+
         }
 
 
@@ -65,12 +67,15 @@ namespace CS_project.PL
                 Form_Project = new Form_Project();
                 Form_Project.id = id;
                 Form_Project.bo_save_User.Text = "تعديل";
-                //
-
                 Form_Project.txt_projName.Text = Projects.ProjectName;
                 Form_Project.txt_projDesc.Text = Projects.ProjectDes;
+                Form_Project.ShowDialog();
+                toastNotificationsManager1.ShowNotification("0efb0bb3-c5d1-4244-8498-37a61bd42ffe");
+
                 //
-                
+
+
+
             }
 
             UserUpdate();

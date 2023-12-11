@@ -23,5 +23,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TB_Tasks">
+      <EntityTypeMapping TypeName="DBTaskTrackerModel.TB_Tasks">
+        <MappingFragment StoreEntitySet="TB_Tasks">
+          <ScalarProperty Name="Task_State" ColumnName="Task_State" />
+          <ScalarProperty Name="Task_Duration" ColumnName="Task_Duration" />
+          <ScalarProperty Name="Task_End" ColumnName="Task_End" />
+          <ScalarProperty Name="Task_Start" ColumnName="Task_Start" />
+          <ScalarProperty Name="Task_Project" ColumnName="Task_Project" />
+          <ScalarProperty Name="Task_Admin" ColumnName="Task_Admin" />
+          <ScalarProperty Name="Task_User" ColumnName="Task_User" />
+          <ScalarProperty Name="Task_Desc" ColumnName="Task_Desc" />
+          <ScalarProperty Name="Task_Name" ColumnName="Task_Name" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="ID_Project" ColumnName="ID_Project" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Notes">
+      <EntityTypeMapping TypeName="DBTaskTrackerModel.TB_Notes">
+        <MappingFragment StoreEntitySet="TB_Notes">
+          <ScalarProperty Name="Note_User" ColumnName="Note_User" />
+          <ScalarProperty Name="Note_Manager" ColumnName="Note_Manager" />
+          <ScalarProperty Name="Note_Desc" ColumnName="Note_Desc" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

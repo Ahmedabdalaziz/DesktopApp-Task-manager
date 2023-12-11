@@ -65,8 +65,8 @@
             this.bot_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bot_edit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bot_edit.Appearance.Options.UseFont = true;
-            this.bot_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_edit.ImageOptions.Image")));
             this.bot_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.bot_edit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bot_edit.ImageOptions.SvgImage")));
             this.bot_edit.Location = new System.Drawing.Point(567, 9);
             this.bot_edit.Name = "bot_edit";
             this.bot_edit.Size = new System.Drawing.Size(98, 66);
@@ -79,8 +79,8 @@
             this.bot_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bot_delete.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bot_delete.Appearance.Options.UseFont = true;
-            this.bot_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_delete.ImageOptions.Image")));
             this.bot_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.bot_delete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bot_delete.ImageOptions.SvgImage")));
             this.bot_delete.Location = new System.Drawing.Point(463, 9);
             this.bot_delete.Name = "bot_delete";
             this.bot_delete.Size = new System.Drawing.Size(98, 66);
@@ -94,8 +94,8 @@
             this.bot_add.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bot_add.Appearance.Options.UseFont = true;
             this.bot_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bot_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bot_add.ImageOptions.Image")));
             this.bot_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.bot_add.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bot_add.ImageOptions.SvgImage")));
             this.bot_add.Location = new System.Drawing.Point(359, 9);
             this.bot_add.Name = "bot_add";
             this.bot_add.Size = new System.Drawing.Size(98, 66);

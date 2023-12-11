@@ -5,8 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2a73df8a51f44a61ba539dc69bf19986" Name="Diagram1">
-        <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Users" Width="1.5" PointX="1" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Projects" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Tasks" Width="1.5" PointX="5.75" PointY="0.75" />
+        <AssociationConnector Association="DBTaskTrackerModel.FK_TB_Tasks_TB_Projects" />
+        <AssociationConnector Association="DBTaskTrackerModel.FK_TB_Tasks_TB_Users" />
+        <EntityTypeShape EntityType="DBTaskTrackerModel.TB_Notes" Width="1.5" PointX="3.375" PointY="3.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

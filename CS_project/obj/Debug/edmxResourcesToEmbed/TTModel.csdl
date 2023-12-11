@@ -11,10 +11,21 @@
     <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="TB_Tasks" Relationship="DBTaskTrackerModel.FK_TB_Tasks_TB_Users" FromRole="TB_Users" ToRole="TB_Tasks" />
   </EntityType>
   <EntityContainer Name="DBTaskTrackerEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TB_Users" EntityType="Self.TB_Users" />
     <EntitySet Name="TB_Projects" EntityType="DBTaskTrackerModel.TB_Projects" />
+    <EntitySet Name="TB_Tasks" EntityType="DBTaskTrackerModel.TB_Tasks" />
+    <AssociationSet Name="FK_TB_Tasks_TB_Projects" Association="DBTaskTrackerModel.FK_TB_Tasks_TB_Projects">
+      <End Role="TB_Projects" EntitySet="TB_Projects" />
+      <End Role="TB_Tasks" EntitySet="TB_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Tasks_TB_Users" Association="DBTaskTrackerModel.FK_TB_Tasks_TB_Users">
+      <End Role="TB_Users" EntitySet="TB_Users" />
+      <End Role="TB_Tasks" EntitySet="TB_Tasks" />
+    </AssociationSet>
+    <EntitySet Name="TB_Notes" EntityType="DBTaskTrackerModel.TB_Notes" />
   </EntityContainer>
   <EntityType Name="TB_Projects">
     <Key>
@@ -23,5 +34,60 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ProjectDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TB_Tasks" Relationship="DBTaskTrackerModel.FK_TB_Tasks_TB_Projects" FromRole="TB_Projects" ToRole="TB_Tasks" />
+  </EntityType>
+  <EntityType Name="TB_Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Project" Type="Int32" />
+    <Property Name="ID_User" Type="Int32" />
+    <Property Name="Task_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Task_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Task_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Task_Admin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Task_Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Task_Start" Type="DateTime" Precision="0" />
+    <Property Name="Task_End" Type="DateTime" Precision="0" />
+    <Property Name="Task_Duration" Type="Int32" />
+    <Property Name="Task_State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TB_Projects" Relationship="DBTaskTrackerModel.FK_TB_Tasks_TB_Projects" FromRole="TB_Tasks" ToRole="TB_Projects" />
+    <NavigationProperty Name="TB_Users" Relationship="DBTaskTrackerModel.FK_TB_Tasks_TB_Users" FromRole="TB_Tasks" ToRole="TB_Users" />
+  </EntityType>
+  <Association Name="FK_TB_Tasks_TB_Projects">
+    <End Type="DBTaskTrackerModel.TB_Projects" Role="TB_Projects" Multiplicity="0..1" />
+    <End Type="DBTaskTrackerModel.TB_Tasks" Role="TB_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Projects">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Tasks">
+        <PropertyRef Name="ID_Project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Tasks_TB_Users">
+    <End Type="DBTaskTrackerModel.TB_Users" Role="TB_Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DBTaskTrackerModel.TB_Tasks" Role="TB_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Tasks">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TB_Notes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Note_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Note_Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
