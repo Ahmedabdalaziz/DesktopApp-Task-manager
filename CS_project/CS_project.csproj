@@ -107,6 +107,12 @@
     <Compile Include="PL\Form_Project.Designer.cs">
       <DependentUpon>Form_Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Form_User_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Form_User_Login.Designer.cs">
+      <DependentUpon>Form_User_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Form_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Form_Project.resx">
       <DependentUpon>Form_Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Form_User_Login.resx">
+      <DependentUpon>Form_User_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Form_User.resx">
       <DependentUpon>Form_User.cs</DependentUpon>

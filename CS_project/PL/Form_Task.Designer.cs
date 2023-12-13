@@ -45,7 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timeBox = new System.Windows.Forms.GroupBox();
-            this.check_done = new System.Windows.Forms.CheckBox();
             this.date_end = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.days = new DevExpress.XtraEditors.TextEdit();
@@ -159,6 +158,7 @@
             this.combo_user.Name = "combo_user";
             this.combo_user.Size = new System.Drawing.Size(433, 43);
             this.combo_user.TabIndex = 11;
+            this.combo_user.SelectedIndexChanged += new System.EventHandler(this.combo_user_SelectedIndexChanged);
             // 
             // combo_admin
             // 
@@ -228,7 +228,6 @@
             // 
             // timeBox
             // 
-            this.timeBox.Controls.Add(this.check_done);
             this.timeBox.Controls.Add(this.date_end);
             this.timeBox.Controls.Add(this.label7);
             this.timeBox.Controls.Add(this.days);
@@ -245,18 +244,6 @@
             this.timeBox.TabStop = false;
             this.timeBox.Text = "الوقت";
             this.timeBox.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // check_done
-            // 
-            this.check_done.AutoSize = true;
-            this.check_done.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_done.Location = new System.Drawing.Point(292, 493);
-            this.check_done.Name = "check_done";
-            this.check_done.Size = new System.Drawing.Size(102, 41);
-            this.check_done.TabIndex = 9;
-            this.check_done.Text = "مكتمل";
-            this.check_done.UseVisualStyleBackColor = true;
-            this.check_done.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // date_end
             // 
@@ -388,7 +375,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         public System.Windows.Forms.DateTimePicker date_end;
         public System.Windows.Forms.DateTimePicker date_start;
-        public System.Windows.Forms.CheckBox check_done;
         public System.Windows.Forms.ComboBox combo_project;
         public System.Windows.Forms.ComboBox combo_user;
         public System.Windows.Forms.ComboBox combo_admin;

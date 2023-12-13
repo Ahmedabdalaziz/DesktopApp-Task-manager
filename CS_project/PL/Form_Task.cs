@@ -142,6 +142,8 @@ namespace CS_project.PL
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+
+
         }
 
         private void editData()
@@ -221,7 +223,28 @@ namespace CS_project.PL
             combo_project.DataSource = db.TB_Projects.Select(x => x.ProjectName).ToList();
             combo_user.DataSource = db.TB_Users.Select(x => x.FullName).ToList();
 
+            combo_admin.SelectedIndex = -1; 
+            combo_user.SelectedIndex = -1; 
+
+            FilterAdminComboBox();
+            FilterUserComboBox();
+
         }
+
+        private void FilterUserComboBox()
+        {
+            var Users = db.TB_Users.Where(u => u.Role == "مستخدم").Select(x => x.FullName).ToList();
+
+            combo_admin.DataSource = Users;
+        }
+
+        private void FilterAdminComboBox()
+        {
+            var admins = db.TB_Users.Where(u => u.Role == "مدير").Select(x => x.FullName).ToList();
+
+            combo_admin.DataSource = admins;
+        }
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -246,14 +269,21 @@ namespace CS_project.PL
             {
                 taskState = " فاضل" + numberOFdays.ToString() + " يوم";
             }
-            else if (numberOFdays < 1)
+            //else if (numberOFdays < 1)
+            //{
+            //    taskState = "غير مكتمل";
+            //}
+            else if (numberOFdays < 0)
             {
-                taskState = "غير مكتمل";
+                taskState = "فائتة";
+                MessageBox.Show(
+                        "لا يمكن اضافة مهمة بتاريخ منتهي",
+                        "لا يمكن اضافة مهمة بتاريخ منتهي",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
             }
-            else if (check_done.Checked== true)
-            {
-                taskState = "خلص";
-            }
+            
 
         }
 
@@ -271,6 +301,13 @@ namespace CS_project.PL
         {
 
         }
+
+        private void combo_user_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
 

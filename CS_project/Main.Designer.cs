@@ -358,13 +358,10 @@
         private System.Windows.Forms.Panel Statusbar;
         private System.Windows.Forms.FlowLayoutPanel pl_cont;
         private DevExpress.XtraEditors.SimpleButton bo_main;
-        private DevExpress.XtraEditors.SimpleButton bo_users;
         private DevExpress.XtraEditors.SimpleButton bo_tasks;
         private DevExpress.XtraEditors.SimpleButton bo_project;
         private DevExpress.XtraEditors.SimpleButton bo_help;
         private DevExpress.XtraEditors.SimpleButton notification_Icon;
-        private System.Windows.Forms.Label lb_Role;
-        private System.Windows.Forms.Label lb_userName;
         private System.Windows.Forms.Label pn_status;
         private DevExpress.Utils.Animation.TransitionManager transitionManager1;
         private System.Windows.Forms.Panel panel1;
@@ -374,6 +371,9 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colNote_Desc;
         private DevExpress.XtraGrid.Columns.TileViewColumn colNote_Manager;
         private DevExpress.XtraGrid.Columns.TileViewColumn colNote_User;
+        public DevExpress.XtraEditors.SimpleButton bo_users;
+        public System.Windows.Forms.Label lb_Role;
+        public System.Windows.Forms.Label lb_userName;
     }
 }
 

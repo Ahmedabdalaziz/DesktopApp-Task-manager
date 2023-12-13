@@ -178,5 +178,18 @@ namespace CS_project.PL
                 SelectedImageBytes = System.IO.File.ReadAllBytes(dialog.FileName);
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked== true) 
+            {
+                txt_pass.Properties.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_pass.Properties.UseSystemPasswordChar = true;
+
+            }
+        }
     }
 }
